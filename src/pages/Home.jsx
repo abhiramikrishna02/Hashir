@@ -605,16 +605,18 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-[1720px] flex-1 flex-col px-5 pb-6 pt-4 sm:px-8 sm:pb-12 sm:pt-8 lg:px-12 lg:pt-12 xl:px-16 2xl:px-20">
           <div className="grid flex-1 items-center gap-x-8 gap-y-4 lg:grid-cols-12 lg:gap-12 xl:gap-16">
             <div className="contents lg:col-span-7 lg:block">
-              <div style={rise(ready)}>
+              <div className="mb-5 flex flex-col items-stretch sm:mb-7 sm:flex-row sm:flex-wrap sm:items-center" style={rise(ready, 60)}>
+                <Link to="/contact" className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-lg border-2 border-[#a4be2d] bg-[#a4be2d] px-5 py-3 text-center text-sm font-bold leading-tight text-[#1e2618] shadow-[0_8px_24px_#52651a35] transition-[transform,background-color,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#b3cc35] hover:bg-[#b3cc35] hover:shadow-[0_12px_28px_#52651a45] active:scale-[.98] sm:w-auto sm:px-7 sm:text-base">Book a free 10-minute strategy call <Arrow /></Link>
+              </div>
+              <div style={rise(ready, 100)}>
                 <h1 id="hero-title" className="text-[clamp(56px,7.2vw,120px)] font-extrabold leading-[.92] tracking-[-.065em]">Hashir Usman</h1>
               </div>
-              <Heading tag="h2" on={ready} delay={40} className="mt-3 text-[clamp(38px,4.3vw,68px)] font-extrabold leading-[1.04] tracking-[-.055em] sm:mt-6" lines={['Is your business growing?', <span className="text-[#7c9318]">Or just getting busier?</span>]} />
+              <Heading tag="h2" on={ready} delay={140} className="mt-3 text-[clamp(38px,4.3vw,68px)] font-extrabold leading-[1.04] tracking-[-.055em] sm:mt-6" lines={['Is your business growing?', <span className="text-[#7c9318]">Or just getting busier?</span>]} />
               <div className="order-1 mt-4 max-w-[600px] lg:order-none sm:mt-8" style={rise(ready, 100)}>
                 <h3 className="m-0 text-xl font-bold leading-[1.3] tracking-[-.02em] text-[#65751b] sm:text-[22px]">Startup architect. Venture builder. Business consultant.</h3>
                 <p className="m-0 mt-3 text-base leading-[1.6] text-[#2f332e] sm:text-lg xl:text-xl">I help people start businesses, fix what’s not working, and build systems that make growth a little less chaotic.</p>
               </div>
-              <div className="order-3 mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:order-none sm:mt-6" style={rise(ready, 160)}>
-                <Link to="/contact" className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-lg border-2 border-[#a4be2d] bg-[#a4be2d] px-5 py-3 text-center text-sm font-bold leading-tight text-[#1e2618] shadow-[0_8px_24px_#52651a35] transition-[transform,background-color,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#b3cc35] hover:bg-[#b3cc35] hover:shadow-[0_12px_28px_#52651a45] active:scale-[.98] sm:w-auto sm:px-7 sm:text-base">Book a free 10-minute strategy call <Arrow /></Link>
+              <div className="order-3 mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:order-none sm:mt-6" style={rise(ready, 220)}>
                 <Link to="/ventures" className="group inline-flex min-h-12 items-center justify-center gap-3 rounded border-[1.5px] border-[#a4aaa0] px-6 text-[13px] font-semibold transition-colors duration-300 hover:border-[#171a1b] hover:bg-[#171a1b] hover:text-white active:scale-[.97]">See My Work <Arrow /></Link>
               </div>
             </div>
