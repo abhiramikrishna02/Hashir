@@ -51,10 +51,10 @@ const eyebrow = 'mb-5 flex items-center gap-3 text-[13px] font-semibold text-[#6
 const h2cls = 'text-[clamp(34px,5vw,66px)] font-extrabold leading-[1.02] tracking-[-.045em]'
 const dotted = '[background-image:radial-gradient(#d5e48145_.8px,transparent_1px)] [background-size:12px_12px]'
 const heroSocials = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/connecthashirusman/', Icon: LinkedinLogo },
   { label: 'Facebook', href: 'https://www.facebook.com/', Icon: FacebookLogo },
   { label: 'Instagram', href: 'https://www.instagram.com/hashir_usman__?psln=Zmg0YnZyM29sdWsx', Icon: InstagramLogo },
   { label: 'YouTube', href: 'https://youtube.com/@thehashirusman?si=U52e3Kiem_73L2mq', Icon: YoutubeLogo },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/', Icon: LinkedinLogo },
 ]
 
 function useInView(margin = '0px 0px 280px 0px') {
@@ -613,9 +613,9 @@ export default function Home() {
                 <h3 className="m-0 text-xl font-bold leading-[1.3] tracking-[-.02em] text-[#65751b] sm:text-[22px]">Startup architect. Venture builder. Business consultant.</h3>
                 <p className="m-0 mt-3 text-base leading-[1.6] text-[#2f332e] sm:text-lg xl:text-xl">I help people start businesses, fix what’s not working, and build systems that make growth a little less chaotic.</p>
               </div>
-              <div className="order-3 mt-4 flex flex-wrap items-center gap-x-4 gap-y-3 lg:order-none sm:mt-6" style={rise(ready, 160)}>
-                <Link to="/contact" className="group inline-flex min-h-12 items-center gap-3 rounded border-[1.5px] border-[#a4be2d] bg-[#a4be2d] px-6 text-[13px] font-semibold text-[#1e2618] transition-colors duration-300 hover:border-[#b3cc35] hover:bg-[#b3cc35] active:scale-[.97]">Book a Strategy Call <Arrow /></Link>
-                <Link to="/ventures" className="group inline-flex min-h-12 items-center gap-3 rounded border-[1.5px] border-[#a4aaa0] px-6 text-[13px] font-semibold transition-colors duration-300 hover:border-[#171a1b] hover:bg-[#171a1b] hover:text-white active:scale-[.97]">See My Work <Arrow /></Link>
+              <div className="order-3 mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:order-none sm:mt-6" style={rise(ready, 160)}>
+                <Link to="/contact" className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-lg border-2 border-[#a4be2d] bg-[#a4be2d] px-5 py-3 text-center text-sm font-bold leading-tight text-[#1e2618] shadow-[0_8px_24px_#52651a35] transition-[transform,background-color,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#b3cc35] hover:bg-[#b3cc35] hover:shadow-[0_12px_28px_#52651a45] active:scale-[.98] sm:w-auto sm:px-7 sm:text-base">Book a free 10-minute strategy call <Arrow /></Link>
+                <Link to="/ventures" className="group inline-flex min-h-12 items-center justify-center gap-3 rounded border-[1.5px] border-[#a4aaa0] px-6 text-[13px] font-semibold transition-colors duration-300 hover:border-[#171a1b] hover:bg-[#171a1b] hover:text-white active:scale-[.97]">See My Work <Arrow /></Link>
               </div>
             </div>
             <div className="order-2 lg:order-none lg:col-span-5">

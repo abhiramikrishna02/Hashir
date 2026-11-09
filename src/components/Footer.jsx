@@ -7,7 +7,7 @@ const groups = [
   { title: 'Opportunities', links: [['Join my team', '/opportunities#hiring'], ['Internships', '/opportunities#internships'], ['Become a Co-Founder', '/opportunities#co-founder']] },
 ]
 const socials = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/', Icon: LinkedinLogo },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/connecthashirusman/', Icon: LinkedinLogo },
   { label: 'X', href: 'https://x.com/', Icon: XLogo },
   { label: 'Instagram', href: 'https://www.instagram.com/hashir_usman__?psln=Zmg0YnZyM29sdWsx', Icon: InstagramLogo },
   { label: 'YouTube', href: 'https://youtube.com/@thehashirusman?si=U52e3Kiem_73L2mq', Icon: YoutubeLogo },

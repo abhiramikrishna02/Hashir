@@ -29,7 +29,7 @@ The production site is generated in `dist/` and can be hosted on any static host
 - `src/index.css`: Tailwind import, design font, and Hero animation keyframes.
 - `public/images/`: responsive portrait assets used by the site.
 
-The contact form saves messages in Supabase and sends an email notification through the configured Gmail account. The LinkedIn destination is the general LinkedIn site because a personal profile URL was not present in the project.
+The contact form saves messages in Supabase and sends an email notification through the configured Gmail account. LinkedIn links point to Hashir Usman's profile.
 
 Venture wordmarks are typographic recreations. Case study outcomes only include information already documented in the project; unreported metrics are identified as such.
 
