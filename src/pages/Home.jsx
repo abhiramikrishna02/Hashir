@@ -15,6 +15,7 @@ const styledWords = (text) => {
   })
 }
 const positioningWords = styledWords(statement)
+const STARTUP_POPUP_DISMISSED_KEY = 'founderverse-popup-dismissed'
 
 const expertise = [
   { title: 'Venture Architecture', desc: 'Making startup ideas more practical, testable, and ready to build.', tags: ['Idea validation', 'Business models', 'Venture strategy'] },
@@ -556,6 +557,13 @@ export default function Home() {
   const [ready, setReady] = useState(calm)
   const [heroInView, setHeroInView] = useState(false)
   const [showStartupPopup, setShowStartupPopup] = useState(false)
+  const [startupPopupDismissed, setStartupPopupDismissed] = useState(() => {
+    try {
+      return window.localStorage.getItem(STARTUP_POPUP_DISMISSED_KEY) === 'true'
+    } catch {
+      return false
+    }
+  })
   useEffect(() => {
     document.title = 'Hashir Usman | Startup Architect, Venture Builder & Business Consultant'
     const frame = requestAnimationFrame(() => setReady(true))
@@ -575,12 +583,18 @@ export default function Home() {
     return () => observer.disconnect()
   }, [])
   useEffect(() => {
-    if (!heroInView) return undefined
+    if (!heroInView || startupPopupDismissed) return undefined
     const popupTimer = window.setTimeout(() => setShowStartupPopup(true), 2000)
     return () => window.clearTimeout(popupTimer)
-  }, [heroInView])
+  }, [heroInView, startupPopupDismissed])
   const dismissStartupPopup = () => {
     setShowStartupPopup(false)
+    setStartupPopupDismissed(true)
+    try {
+      window.localStorage.setItem(STARTUP_POPUP_DISMISSED_KEY, 'true')
+    } catch {
+      // Keep the popup dismissed for this page session if storage is unavailable.
+    }
   }
   const line = (d) => ({ strokeDashoffset: ready ? 0 : 1, transition: `stroke-dashoffset 850ms ${EASE} ${d}ms` })
 
