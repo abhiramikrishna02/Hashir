@@ -133,7 +133,7 @@ function Fade({ as: Tag = 'div', delay = 0, className = '', children }) {
 /* Chapters: [place, organisation, title, story, lesson] (copy from the career journey PDF).    */
 
 const journeyChapters = [
-  ['Kerala, India', 'Ice Grills / Founder', 'The first business instinct', 'An early attempt to build something of my own introduced me to customers, everyday decisions and the gap between an interesting idea and an operating business.', 'A venture begins when an idea meets reality.'],
+  ['Calicut, Kerala', 'Ice Grills / Founder', 'The first business instinct', 'An early attempt to build something of my own introduced me to customers, everyday decisions and the gap between an interesting idea and an operating business.', 'A venture begins when an idea meets reality.'],
   ['United Kingdom', 'University of Bedforshire', 'Learning beyond the classroom', 'I moved to the UK in 2019 for my MBA and also worked in healthcare. The experience taught me responsibility, communication and the value of understanding people.', 'People come before processes.'],
   ['United Kingdom', 'Goldens nottinghamltd / Store manager', 'Operations, every single day', 'Work in a supermarket as manager brought me closer to stock, suppliers, accounts, customer expectations and closing responsibilities. I began to see the discipline behind daily business.', 'Operations keep a business working.'],
   ['United Kingdom / Brighton', 'Suit Spot Ventures Limited / Business development manager', 'Learning to win business', 'Healthcare services, business development and hospitality-related marketing exposed me to client relationships, commercial thinking and the work required to create demand.', 'Growth needs a dependable way to serve customers.'],
