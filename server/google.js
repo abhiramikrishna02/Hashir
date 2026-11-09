@@ -188,7 +188,7 @@ export async function notifyContactInquiry(accessToken, inquiry) {
     '',
     `Name: ${inquiry.name}`,
     `Email: ${inquiry.email}`,
-    `Phone / WhatsApp: ${inquiry.phone || 'Not provided'}`,
+    `Phone: ${inquiry.phone || 'Not provided'}`,
     `Topic: ${inquiry.topic}`,
     '',
     'Message:',

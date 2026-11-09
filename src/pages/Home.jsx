@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowUpRight, ChartLineUp, Compass, FacebookLogo, Gear, InstagramLogo, LinkedinLogo, SquaresFour, WhatsappLogo, YoutubeLogo } from '@phosphor-icons/react'
+import { ArrowUpRight, ChartLineUp, Compass, FacebookLogo, Gear, InstagramLogo, LinkedinLogo, SquaresFour, YoutubeLogo } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 import { createPortal } from 'react-dom'
 import { brandImage, brands } from '../data/brands'
@@ -55,7 +55,6 @@ const heroSocials = [
   { label: 'Instagram', href: 'https://www.instagram.com/hashir_usman__?psln=Zmg0YnZyM29sdWsx', Icon: InstagramLogo },
   { label: 'YouTube', href: 'https://youtube.com/@thehashirusman?si=U52e3Kiem_73L2mq', Icon: YoutubeLogo },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/', Icon: LinkedinLogo },
-  { label: 'WhatsApp', href: 'https://wa.me/919633442126', Icon: WhatsappLogo },
 ]
 
 function useInView(margin = '0px 0px 280px 0px') {
@@ -539,7 +538,7 @@ function Positioning() {
     <section id="positioning" aria-labelledby="positioning-title" className="relative isolate overflow-x-clip bg-[#171a1b] py-28 text-[#f8f9f6] sm:py-40">
       <div className={`${wrap} relative z-10 grid gap-10 lg:grid-cols-12`}>
         <div className="relative z-10 lg:col-span-3">
-          <h3 className="lg:sticky lg:top-24 m-0 max-w-[12ch] text-[clamp(24px,2.5vw,36px)] font-bold leading-[1.05] tracking-[-.04em] text-white">
+          <h3 className="lg:sticky lg:top-24 m-0 max-w-[12ch] text-[clamp(20px,2.1vw,30px)] font-bold leading-[1.05] tracking-[-.04em] text-white">
             A clearer way to <span className="text-[#a4be2d]">build.</span>
           </h3>
         </div>
