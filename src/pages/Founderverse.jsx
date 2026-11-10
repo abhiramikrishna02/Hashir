@@ -46,10 +46,11 @@ const books = [
   { title: 'Scaling & Long-Term Growth', text: 'Grow in a way that lasts.' },
 ]
 const faqs = [
-  { q: 'Who is Founderverse for?', a: 'Aspiring and early-stage founders who want to make better decisions. No prior experience needed.' },
-  { q: 'Physical, digital, or both?', a: DIGITAL_AVAILABLE ? `A physical collection at ${PRICE.physical} and a digital collection at ${PRICE.digital}.` : `A physical collection at ${PRICE.physical}.` },
-  { q: 'How is this different from free resources?', a: 'Free resources can be great. This is an organised starting point: the essentials in one place, with case studies and frameworks to return to.' },
-  { q: 'How do delivery, payment and refunds work?', a: TERMS_PENDING },
+  { q: 'What is Founderverse?', a: 'Founderverse is a collection of 10 startup-focused books designed to help aspiring entrepreneurs understand the essential areas of building and growing a business.' },
+  { q: 'Who is Founderverse for?', a: 'Founderverse is for aspiring entrepreneurs and early-stage founders who want to build a strong foundation in business and make more informed decisions.' },
+  { q: 'What topics are covered in the collection?', a: 'The 10 books cover Startup Fundamentals, Business Models, Marketing & Growth, Customer Acquisition, Finance & Financial Planning, Fundraising & Investors, Team & Leadership, Operations & Execution, Startup Case Studies, and Scaling & Long-Term Growth.' },
+  { q: 'How is Founderverse different from free online resources?', a: 'Free resources can be valuable, but information is often scattered across different platforms. Founderverse brings essential startup knowledge together in one structured collection, with business concepts, case studies, and practical frameworks you can revisit.' },
+  { q: 'Can I use Founderverse if I have already started a business?', a: 'Yes. Founderverse is designed for both aspiring and early-stage founders, with topics covering business fundamentals and the challenges involved in developing and growing a business.' },
 ]
 
 /* ---------- Style helpers ---------- */

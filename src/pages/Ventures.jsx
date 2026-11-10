@@ -1,4 +1,5 @@
 import { version, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { ArrowRight } from '@phosphor-icons/react'
 import { Link, useLocation } from 'react-router-dom'
 import { brands, groups } from '../data/brands'
@@ -36,6 +37,33 @@ const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
 const pill = 'rounded-full border px-3 py-1 text-xs font-medium'
 const move = 'transition-[opacity,transform,translate,scale]'
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+const PORTFOLIO_PROJECT_SLUGS = {
+  ezkaa: 'ezka',
+  'ai-designers': 'ai-designers-ecosystem',
+  founderverse: 'the-founderverse',
+  hosther: 'hosther-hostels',
+  heydossa: 'hey-dossa',
+  'car-broker': 'carbroker',
+  'nk-reactives': 'nkreatives',
+}
+
+function CreativePortfolioPopup({ venture, onClose }) {
+  if (!venture) return null
+
+  return createPortal(
+    <aside aria-label="Creative portfolio shortcut" className="fixed bottom-[calc(14px_+_env(safe-area-inset-bottom))] left-1/2 z-[120] w-[min(360px,calc(100vw-28px))] -translate-x-1/2 rounded-2xl border border-white/15 bg-[#10382D] p-4 text-white shadow-[0_18px_46px_rgba(7,24,17,.48)] animate-startup-popup sm:bottom-6 sm:left-auto sm:right-6 sm:w-[370px] sm:translate-x-0">
+      <div className="flex items-start justify-between gap-3">
+        <p className="m-0 min-w-0 text-sm leading-relaxed text-white/80">See the creative portfolio for <span className="font-semibold text-white">{venture.name}</span>.</p>
+        <button type="button" onClick={onClose} aria-label="Close creative portfolio shortcut" className="-mr-1 -mt-1 grid size-8 shrink-0 place-items-center rounded-full text-lg text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4D638]">×</button>
+      </div>
+      <Link to={`/creative-portfolio#project-${PORTFOLIO_PROJECT_SLUGS[venture.id] || venture.id}`} onClick={onClose} className="group mt-3 inline-flex min-h-11 w-full items-center justify-between rounded-lg bg-[#C4D638] px-4 text-sm font-bold text-[#10251b] no-underline transition-colors hover:bg-[#d4e66a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+        See my creative portfolio<ArrowRight size={18} weight="light" aria-hidden className="transition-transform duration-300 group-hover:translate-x-1" />
+      </Link>
+    </aside>,
+    document.body,
+  )
+}
 
 // Scroll-scrubbed motion. Elements marked data-p get a CSS variable --p (0 to 1) that follows scroll, and
 // the styles read it with calc(). Modes: top (page scroll), enter (arriving), read (passing through
@@ -159,6 +187,7 @@ function Directory() {
   const { hash } = useLocation()
   const [filter, setFilter] = useState('All')
   const [open, setOpen] = useState(ventureBrands[0].id)
+  const [popupVenture, setPopupVenture] = useState(null)
   const timer = useRef(0)
   const list = filter === 'All' ? ventureBrands : ventureBrands.filter((b) => b.group === filter)
   const sectorChips = ['All', ...groups]
@@ -175,6 +204,7 @@ function Directory() {
   const toggle = (id) => {
     const next = open === id ? null : id
     setOpen(next)
+    setPopupVenture(next ? ventureBrands.find((brand) => brand.id === id) : null)
     if (next) reveal(id, reduced() ? 0 : 640, false)
   }
   const pick = (g) => {
@@ -256,6 +286,7 @@ function Directory() {
           )
         })}
       </ul>
+      <CreativePortfolioPopup venture={popupVenture} onClose={() => setPopupVenture(null)} />
     </>
   )
 }
@@ -274,6 +305,7 @@ export default function Ventures() {
   }, [hash])
 
   return (
+    <>
     <main id="main" ref={root} className="overflow-x-clip">
       {/* 01 Hero */}
       <section data-p="top" aria-labelledby="ventures-title" className="relative isolate overflow-hidden bg-white text-[#153B2B]">
@@ -387,5 +419,6 @@ export default function Ventures() {
         </div>
       </section>
     </main>
+    </>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 /* =========================================================
    HU STUDIO — Creative Portfolio (page route)
@@ -163,6 +163,12 @@ const WORK_VIDEOS = {
   'ai-institute': [
     { src: 'https://www.instagram.com/reel/DNVR0stP4NS/embed', title: 'AI Institute Instagram reel' },
     { src: 'https://www.instagram.com/reel/DK1eipgJnVD/embed', title: 'AI Institute Instagram reel' },
+  ],
+  'tempest-automotive': [
+    { src: 'https://www.instagram.com/reel/Dfg1IK8ztkl/embed', title: 'Tempest Automotive Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/Dd6ZuV9TyFn/embed', title: 'Tempest Automotive Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/DZACgvqAR-0/embed', title: 'Tempest Automotive Instagram reel 3' },
+    { src: 'https://www.instagram.com/reel/DQyjLoUkXfA/embed', title: 'Tempest Automotive Instagram reel 4' },
   ],
   'shameers-cars': [
     { src: 'https://www.instagram.com/reel/DGVwJYTTFV_/embed', title: "Shameer's Cars Instagram reel" },
@@ -692,6 +698,7 @@ function CountUp({ to, pad: width = 0, className }) {
    ========================================================= */
 
 export default function CreativePortfolio() {
+  const { hash } = useLocation()
   const rootRef = useRef(null)
   const topbarRef = useRef(null)
   const dialogRef = useRef(null)
@@ -706,6 +713,17 @@ export default function CreativePortfolio() {
   const [query, setQuery] = useState('')
   const [sectorIndexFilter, setSectorIndexFilter] = useState('all')
   const [openRows, setOpenRows] = useState(() => new Set())
+
+  useEffect(() => {
+    if (!hash.startsWith('#project-')) return
+    const slug = hash.slice('#project-'.length)
+    const index = PROJECTS.findIndex((project) => project.name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === slug)
+    if (index < 0) return
+    setSectorIndexFilter('all')
+    setQuery('')
+    setOpenRows(new Set([index]))
+    requestAnimationFrame(() => document.getElementById(`project-${slug}`)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }))
+  }, [hash])
 
   /* ---------- Document title ---------- */
   useEffect(() => {
@@ -1198,7 +1216,7 @@ export default function CreativePortfolio() {
                 {visibleProjects.map(({ p, i }) => {
                   const open = openRows.has(i)
                   return (
-                    <li key={p.name} className={`border-2 border-[#141414] rounded-xl bg-[#fffdf8] overflow-hidden ${open ? 'shadow-[4px_4px_0_#141414]' : ''}`}>
+                    <li key={p.name} id={`project-${p.name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`} className={`scroll-mt-24 border-2 border-[#141414] rounded-xl bg-[#fffdf8] overflow-hidden ${open ? 'shadow-[4px_4px_0_#141414]' : ''}`}>
                       <button
                         type="button"
                         aria-expanded={open}
