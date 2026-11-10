@@ -956,6 +956,10 @@ export default function CreativePortfolio() {
   const workGallery = WORK_GALLERIES[c.slug] || []
   const workPackaging = WORK_PACKAGING[c.slug] || []
   const workVideos = WORK_VIDEOS[c.slug] || []
+  const responsibilityGroups = [
+    { title: 'Leadership & brand', items: c.lead },
+    { title: 'Marketing & growth', items: c.mkt },
+  ].filter(({ items }) => items.length > 0)
 
   /* ---------- Project index ---------- */
   const visibleProjects = useMemo(
@@ -1454,16 +1458,16 @@ export default function CreativePortfolio() {
           </div>
           <h4 className="text-[1.25rem] font-black">{c.headline}</h4>
           <p>{c.summary}</p>
-          <div className="grid grid-cols-2 max-[760px]:grid-cols-1 gap-[14px]">
-            <div className="p-[14px] border-2 border-[#141414] rounded-xl bg-[#fff8ec]">
-              <h5 className="text-[0.8rem] font-black uppercase mb-2.5">Leadership &amp; brand</h5>
-              <Tags items={c.lead} />
+          {responsibilityGroups.length > 0 && (
+            <div className={`grid gap-[14px] ${responsibilityGroups.length === 1 ? 'grid-cols-1' : 'grid-cols-2 max-[760px]:grid-cols-1'}`}>
+              {responsibilityGroups.map(({ title, items }) => (
+                <div key={title} className="p-[14px] border-2 border-[#141414] rounded-xl bg-[#fff8ec]">
+                  <h5 className="text-[0.8rem] font-black uppercase mb-2.5">{title}</h5>
+                  <Tags items={items} />
+                </div>
+              ))}
             </div>
-            <div className="p-[14px] border-2 border-[#141414] rounded-xl bg-[#fff8ec]">
-              <h5 className="text-[0.8rem] font-black uppercase mb-2.5">Marketing &amp; growth</h5>
-              <Tags items={c.mkt} />
-            </div>
-          </div>
+          )}
           <p className="text-[length:clamp(0.98rem,1.05vw,1.08rem)] leading-[1.5] text-[#5b5b5b] italic">{c.note}</p>
           {workGallery.length > 0 && (
             <section aria-label={`${c.name} gallery`} className="flex flex-col gap-3">
