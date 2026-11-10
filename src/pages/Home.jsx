@@ -52,7 +52,7 @@ const h2cls = 'text-[clamp(34px,5vw,66px)] font-extrabold leading-[1.02] trackin
 const dotted = '[background-image:radial-gradient(#d5e48145_.8px,transparent_1px)] [background-size:12px_12px]'
 const heroSocials = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/connecthashirusman/', Icon: LinkedinLogo },
-  { label: 'Facebook', href: 'https://www.facebook.com/', Icon: FacebookLogo },
+  { label: 'Facebook', href: 'https://www.facebook.com/hashir.usman1997', Icon: FacebookLogo },
   { label: 'Instagram', href: 'https://www.instagram.com/hashir_usman__?psln=Zmg0YnZyM29sdWsx', Icon: InstagramLogo },
   { label: 'YouTube', href: 'https://youtube.com/@thehashirusman?si=U52e3Kiem_73L2mq', Icon: YoutubeLogo },
 ]
