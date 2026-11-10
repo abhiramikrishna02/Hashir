@@ -24,7 +24,6 @@ const LOGO_ASSETS = {
   'hungry-potato': '/brand-logos/hungry-potato.png',
   'carbroker': '/brand-logos/carbroker.png',
   'curry-bag': '/brand-logos/curry-bag.png',
-  'suite-spot': '/brand-logos/suite-spot.png',
   'no-two': '/brand-logos/no-two.png',
   'hyzo': '/brand-logos/hyzo.jpeg',
   'ezka': '/brand-logos/ezka.png',
@@ -48,15 +47,13 @@ const LOGO_ASSETS = {
   'shameers-cars': '/brand-logos/shameers-cars.png',
   'popsi': '/brand-logos/popsi.png',
   'the-grid-store': '/brand-logos/the-grid-store.png',
-  'beyond-the-business': '/brand-logos/beyond-the-business.jpeg',
   'celebrations': '/brand-logos/celebrations.jpeg',
-  'xyklon': '/brand-logos/xyklon.png',
   'hand-revolution': '/brand-logos/hand-revolution.jpeg',
 }
 
-const ZOOMED_LOGOS = new Set(['nkreatives', 'curry-bag', 'ai-institute', 'tempest-automotive', 'vinayaka-hospital', 'wayanad-trade-centre', 'beyond-the-business'])
+const ZOOMED_LOGOS = new Set(['nkreatives', 'curry-bag', 'ai-institute', 'tempest-automotive', 'vinayaka-hospital', 'wayanad-trade-centre'])
 const LOGO_BACKGROUNDS = { 'curry-bag': '#050505', 'tempest-automotive': '#d41450' }
-const LOGO_SIZES = { 'curry-bag': 'size-[180%]', 'beyond-the-business': 'size-[140%] translate-y-[8%]' }
+const LOGO_SIZES = { 'curry-bag': 'size-[180%]' }
 
 // Social media examples shown inside each selected work's case detail.
 const WORK_GALLERIES = {
@@ -116,6 +113,79 @@ const WORK_GALLERIES = {
   'ai-institute': [
     ['aiinstitute-insta-posts.png', 'AI Institute Instagram posts'],
   ],
+  celebrations: [
+    ['celebrations-insta.png', 'Celebrations Instagram profile'],
+  ],
+  'global-venture': [
+    ['gloabl-insta-reels.png', 'Global Venture Instagram reels'],
+    ['global-insta-post.png', 'Global Venture Instagram post'],
+  ],
+  'hand-revolution': [
+    ['hand-revolution-insta.png', 'Hand Revolution Instagram post'],
+    ['hand-revolution-instaprof.png', 'Hand Revolution Instagram profile'],
+  ],
+  'tanza-opticals': [
+    ['tanza-insta.png', 'Tanza Opticals Instagram post'],
+  ],
+  terminal: [
+    ['teerminal-insta.png', 'Terminal Instagram profile'],
+    ['terminal-post.png', 'Terminal Instagram post'],
+  ],
+  'tp-group-of-companies': [
+    ['tp-post.png', 'TP Group of Companies Instagram post'],
+    ['tp-insta.png', 'TP Group of Companies Instagram profile'],
+  ],
+  'vinayaka-hospital': [
+    ['vinayaka-insta.png', 'Vinayaka Hospital Instagram profile'],
+    ['vinayaka-posts.png', 'Vinayaka Hospital social media posts'],
+  ],
+  'warrior-mens': [
+    ['warrior-post.png', 'Warrior Mens Instagram post'],
+    ['warrior-insta.png', 'Warrior Mens Instagram profile'],
+  ],
+  'wayanad-trade-centre': [
+    ['wayanad-trade-post.png', 'Wayanad Trade Centre Instagram post'],
+    ['wayanad-reel.png', 'Wayanad Trade Centre Instagram reel'],
+  ],
+  'start-x': [
+    ['start-x-logo.png', 'Start-X logo in social media', '/brand-logos/start-x.png', 'social'],
+  ],
+  'ai-designers': [
+    ['ai-designers-logo.png', 'AI Designers Ecosystem logo in social media', '/brand-logos/ai-designers.png', 'social'],
+  ],
+  carbroker: [
+    ['carbroker-logo.png', 'CarBroker logo in social media', '/brand-logos/carbroker.png', 'social'],
+  ],
+  'curry-bag': [
+    ['curry-bag-logo.png', 'Curry Bag logo in social media', '/brand-logos/curry-bag.png', 'social'],
+  ],
+  'de-coff': [
+    ['de-coff-logo.png', 'DE COFF logo in social media', '/brand-logos/de-coff.png', 'social'],
+  ],
+  ezka: [
+    ['ezka-logo.png', 'Ezka logo in social media', '/brand-logos/ezka.png', 'social'],
+  ],
+  'hey-dossa': [
+    ['hey-dossa-logo.png', 'Hey Dossa logo in social media', '/brand-logos/hey-dossa.png', 'social'],
+  ],
+  'hosther-hostels': [
+    ['hosther-logo.png', 'Hosther Hostels logo in social media', '/brand-logos/hosther-hostels.png', 'social'],
+  ],
+  'hungry-potato': [
+    ['hungry-potato-logo.png', 'Hungry Potato logo in social media', '/brand-logos/hungry-potato.png', 'social'],
+  ],
+  hyzo: [
+    ['hyzo-logo.png', 'Hyzo logo in social media', '/brand-logos/hyzo.jpeg', 'social'],
+  ],
+  popsi: [
+    ['popsi-logo.png', 'POPSI logo in social media', '/brand-logos/popsi.png', 'social'],
+  ],
+  sol: [
+    ['sol-logo.png', 'Sol. logo in social media', '/brand-logos/sol.png', 'social'],
+  ],
+  'the-grid-store': [
+    ['grid-store-logo.png', 'The Grid Store logo in social media', '/brand-logos/the-grid-store.png', 'social'],
+  ],
 }
 
 const WORK_PACKAGING = {
@@ -169,6 +239,50 @@ const WORK_VIDEOS = {
     { src: 'https://www.instagram.com/reel/Dd6ZuV9TyFn/embed', title: 'Tempest Automotive Instagram reel 2' },
     { src: 'https://www.instagram.com/reel/DZACgvqAR-0/embed', title: 'Tempest Automotive Instagram reel 3' },
     { src: 'https://www.instagram.com/reel/DQyjLoUkXfA/embed', title: 'Tempest Automotive Instagram reel 4' },
+  ],
+  celebrations: [
+    { src: 'https://www.instagram.com/reel/DJWp_q4vaXh/embed', title: 'Celebrations Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/C71OrcMP6IT/embed', title: 'Celebrations Instagram reel 2' },
+  ],
+  'global-venture': [
+    { src: 'https://www.instagram.com/reel/DfR56qFJzC_/embed', title: 'Global Venture Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/De1g_dWJ95B/embed', title: 'Global Venture Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/DdbXPcFJU-q/embed', title: 'Global Venture Instagram reel 3' },
+  ],
+  'hand-revolution': [
+    { src: 'https://www.instagram.com/reel/DPjMtSfE__j/embed', title: 'Hand Revolution Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/Dei3EgKNMyO/embed', title: 'Hand Revolution Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/Dae0Xa1R-3O/embed', title: 'Hand Revolution Instagram reel 3' },
+  ],
+  'tanza-opticals': [
+    { src: 'https://www.instagram.com/reel/DfKWPUVzt01/embed', title: 'Tanza Opticals Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/DfKM-iFSnq6/embed', title: 'Tanza Opticals Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/Da5OE6no_Xe/embed', title: 'Tanza Opticals Instagram reel 3' },
+  ],
+  terminal: [
+    { src: 'https://www.instagram.com/reel/DfFLCsyue-O/embed', title: 'Terminal Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/DeRwU07uZf7/embed', title: 'Terminal Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/Dd1Evk2uSL3/embed', title: 'Terminal Instagram reel 3' },
+  ],
+  'tp-group-of-companies': [
+    { src: 'https://www.instagram.com/reel/Ddlp27Wz_5k/embed', title: 'TP Group of Companies Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/Ddqat3WyRBA/embed', title: 'TP Group of Companies Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/Ddk1uDUSsJF/embed', title: 'TP Group of Companies Instagram reel 3' },
+  ],
+  'vinayaka-hospital': [
+    { src: 'https://www.instagram.com/reel/DdsoEjzp8ev/embed', title: 'Vinayaka Hospital Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/DdTlB8fJVNJ/embed', title: 'Vinayaka Hospital Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/DcDySiUJgpN/embed', title: 'Vinayaka Hospital Instagram reel 3' },
+  ],
+  'warrior-mens': [
+    { src: 'https://www.instagram.com/reel/DceBIqKzNGC/embed', title: 'Warrior Mens Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/DcdVYpETUL6/embed', title: 'Warrior Mens Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/DcaxWc2Txy_/embed', title: 'Warrior Mens Instagram reel 3' },
+  ],
+  'wayanad-trade-centre': [
+    { src: 'https://www.instagram.com/reel/De1nrjeTayf/embed', title: 'Wayanad Trade Centre Instagram reel 1' },
+    { src: 'https://www.instagram.com/reel/DeMd00zzknp/embed', title: 'Wayanad Trade Centre Instagram reel 2' },
+    { src: 'https://www.instagram.com/reel/DcN6eN3gWCV/embed', title: 'Wayanad Trade Centre Instagram reel 3' },
   ],
   'shameers-cars': [
     { src: 'https://www.instagram.com/reel/DGVwJYTTFV_/embed', title: "Shameer's Cars Instagram reel" },
@@ -240,9 +354,9 @@ function DeferredInstagramEmbed({ src, title, thumbnail }) {
 function SocialAssetGrid({ items }) {
   const hasBareLogicLogo = items.some(([file, , src]) => file === 'barelogic.png' && src === '/ventures/barelogic.png')
   const sections = [
-    { title: 'Brand identity', items: items.filter(([file, , src]) => Boolean(src) || (file === 'carzo.jpeg')) },
-    { title: 'CRM & business systems', items: items.filter(([file]) => /crm|dashboard|performance|analytics|report/i.test(file)) },
-    { title: 'Social media', items: items.filter(([file, , src]) => !src && file !== 'carzo.jpeg' && !/crm|dashboard|performance|analytics|report/i.test(file)) },
+    { title: 'Brand identity', items: items.filter(([file, , src, placement]) => placement === 'brand' || (!placement && (Boolean(src) || file === 'carzo.jpeg'))) },
+    { title: 'CRM & business systems', items: items.filter(([file, , , placement]) => !placement && /crm|dashboard|performance|analytics|report/i.test(file)) },
+    { title: 'Social media', items: items.filter(([file, , src, placement]) => placement === 'social' || (!placement && !src && file !== 'carzo.jpeg' && !/crm|dashboard|performance|analytics|report/i.test(file))) },
   ].filter(({ items: sectionItems }) => sectionItems.length)
 
   return (
@@ -254,16 +368,19 @@ function SocialAssetGrid({ items }) {
             className="grid items-start gap-3"
             style={{ gridTemplateColumns: `repeat(auto-fill, minmax(min(100%, 150px), ${hasBareLogicLogo ? 250 : 190}px))` }}
           >
-            {sectionItems.map(([file, label, src]) => (
+            {sectionItems.map(([file, label, src, placement]) => {
+              const isVentureLogo = placement === 'social'
+              return (
               <figure key={file} className={`m-0 min-w-0 overflow-hidden rounded-lg border-2 border-[#141414] bg-white shadow-[2px_2px_0_#141414] ${['dayone-crm.png', 'dayone-monthly-performance.png'].includes(file) ? 'col-span-2 max-[500px]:col-span-1' : ''}`}>
-                <div className={`grid ${['dayone-crm.png', 'dayone-monthly-performance.png'].includes(file) ? 'aspect-video' : hasBareLogicLogo && file === 'barelogic.png' ? 'aspect-square' : 'aspect-[4/5]'} place-items-center overflow-hidden bg-[#f3f0eb]`}>
-                  <img src={src || `/social-media/${file}`} alt={label} loading="lazy" decoding="async" className={`block h-full w-full object-contain ${hasBareLogicLogo && file === 'barelogic.png' ? 'scale-[1.65]' : ''}`} />
+                <div className={`grid ${['dayone-crm.png', 'dayone-monthly-performance.png'].includes(file) ? 'aspect-video' : isVentureLogo || (hasBareLogicLogo && file === 'barelogic.png') ? 'aspect-square' : 'aspect-[4/5]'} place-items-center overflow-hidden ${isVentureLogo ? '' : 'bg-[#f3f0eb]'}`}>
+                  <img src={src || `/social-media/${file}`} alt={label} loading="lazy" decoding="async" className={`block h-full w-full ${isVentureLogo ? 'object-cover' : 'object-contain'} ${hasBareLogicLogo && file === 'barelogic.png' ? 'scale-[1.65]' : ''}`} />
                 </div>
                 {!/instagram|social post|social posts/i.test(label) && (
                   <figcaption className="border-t-2 border-[#141414] px-2 py-1.5 text-[0.7rem] font-bold leading-tight">{label}</figcaption>
                 )}
               </figure>
-            ))}
+              )
+            })}
           </div>
         </section>
       ))}
@@ -391,15 +508,14 @@ const BRANDS = [
   ['de-coff', 'De Coff', 'Café'], ['house-of-bliss', 'House of Bliss', 'Lifestyle'],
   ['hungry-potato', 'Hungry Potato', 'Food & beverage'], ['carbroker', 'CarBroker', 'Automotive'],
   ['carzo', 'Carzo', 'Automotive / car selling'],
-  ['curry-bag', 'Curry Bag', 'Food & takeaway'], ['suite-spot', 'Suite Spot', 'Hospitality'],
+  ['curry-bag', 'Curry Bag', 'Food & takeaway'],
   ['founderverse', 'The Founderverse', 'Startup education'], ['hyzo', 'Hyzo', 'Brand concept'],
   ['ezka', 'Ezka', 'Fashion & lifestyle'], ['dayone', 'DayOne', 'Venture studio'],
   ['no-two', 'No Two', 'Skincare'], ['hosther-hostels', 'Hosther Hostels', 'Hospitality'],
   ['ai-designers', 'AI Designers', 'Tech community'], ['sol', 'Sol.', "Women's fashion"],
   ['nothing-else', 'Nothing Else', 'FMCG'], ['bare-logic', 'Bare Logic', 'Skincare'],
   ['popsi', 'POPSI', 'Beverages'], ['the-grid-store', 'The Grid Store', 'Electronics / e-commerce'],
-  ['beyond-the-business', 'Beyond the Business', 'Management consultancy / digital marketing'],
-  ['celebrations', 'Celebrations', 'Corporate events'], ['xyklon', 'Xyklon', 'Mobile accessories / GCC'],
+  ['celebrations', 'Celebrations', 'Corporate events'],
   ['hand-revolution', 'Hand Revolution', 'Footwear / e-commerce'],
   ['terminal', 'Terminal', "Men's fashion"], ['nkreatives', 'NKreatives', 'Creative / marketing agency'],
   ['coffee-klatch', 'Coffee Klatch', 'Café'], ['global-venture', 'Global Venture', 'Construction / design'],
@@ -455,8 +571,6 @@ const PROJECTS = [
   P('Curry Bag', 'Food & takeaway', 'food', 'Founder / Co-founder', 'founder',
     ['CEO / business leadership', 'Marketing leadership'],
     ['Brand strategy', 'Naming & identity', 'Brand voice', 'Brand architecture', 'Creative direction', 'Content production', 'Social design'], ['Go-to-market']),
-  P('Suite Spot', 'Hospitality', 'food', 'CMO / Head of Marketing', 'marketing',
-    ['Marketing leadership', 'Team leadership', 'Operations / SOPs'], ['Brand strategy'], ['Growth & revenue', 'Sales & BD']),
   P('The Founderverse', 'Startup education', 'venture', 'Founder / Co-founder', 'founder', L_ALL, B_ALL, M_ALL),
   P('Hyzo', 'Brand concept', 'consumer', 'Consultant / Advisor', 'advisor',
     [], ['Naming & identity', 'Brand architecture', 'Creative direction', 'Content production', 'Social design'], []),
@@ -509,12 +623,8 @@ const PROJECTS = [
     [], ['Brand strategy', 'Naming & identity', 'Creative direction'], ['Go-to-market', 'Social strategy']),
   P('The Grid Store', 'Electronics / e-commerce', 'consumer', 'Consultant / Advisor', 'advisor',
     [], ['Brand strategy', 'Naming & identity', 'Brand architecture'], ['Go-to-market', 'Web / digital']),
-  P('Beyond the Business', 'Management consultancy / digital marketing', 'corporate', 'CMO / Head of Marketing', 'marketing',
-    ['Marketing leadership'], ['Brand strategy', 'Creative direction'], ['Social strategy', '360° marketing', 'Growth & revenue']),
   P('Celebrations', 'Events / corporate', 'food', 'Event Head', 'event-head',
     ['Team leadership', 'Operations / SOPs'], ['Creative direction'], ['Social strategy']),
-  P('Xyklon', 'Mobile accessories / GCC', 'consumer', 'Consultant / Advisor', 'advisor',
-    ['Operations / SOPs'], ['Brand strategy'], ['Growth & revenue']),
   P('Hand Revolution', 'Footwear / e-commerce', 'consumer', 'Founder / Co-founder', 'founder',
     ['CEO / business leadership', 'Operations / SOPs'], ['Brand strategy'], ['Growth & revenue', 'Web / digital']),
 ].sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' })).map((p) => ({
@@ -1167,7 +1277,7 @@ export default function CreativePortfolio() {
                   style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 320px' }}
                   className="relative m-0 border-[3px] border-[#141414] rounded-[14px] overflow-hidden bg-white shadow-[4px_4px_0_#141414] hover:shadow-[7px_7px_0_#141414]"
                 >
-                  <Logo slug={slug} name={name} cover={!['admos', 'founderverse', 'oxtel', 'xyklon', ...ZOOMED_LOGOS].includes(slug)} className="block w-full aspect-[453/293] bg-white" style={{ backgroundColor: LOGO_BACKGROUNDS[slug] || '#fff' }} />
+                  <Logo slug={slug} name={name} cover={!['admos', 'founderverse', 'oxtel', ...ZOOMED_LOGOS].includes(slug)} className="block w-full aspect-[453/293] bg-white" style={{ backgroundColor: LOGO_BACKGROUNDS[slug] || '#fff' }} />
                   <figcaption className="flex flex-col gap-px px-2.5 py-2 text-[0.76rem] font-extrabold border-t-[3px] border-[#141414] bg-[#fffdf8]">
                     {name}
                     <small className="font-semibold text-[#5b5b5b] normal-case">{sector}</small>
