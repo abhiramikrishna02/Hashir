@@ -10,6 +10,9 @@ import { Link, useLocation } from 'react-router-dom'
 
 const LOGO_ASSETS = {
   'admos': '/brand-logos/admos.png',
+  'suite-spot': '/ventures/suite-spot.jpeg',
+  'beyond-the-business': '/ventures/beyondthebussiness.jpeg',
+  'xyklon': '/xyklon.png',
   'oxtel': '/brand-logos/oxtel.png',
   'dayone': '/brand-logos/dayone.png',
   'nkreatives': '/brand-logos/nkreatives.png',
@@ -23,7 +26,7 @@ const LOGO_ASSETS = {
   'house-of-bliss': '/brand-logos/house-of-bliss.png',
   'hungry-potato': '/brand-logos/hungry-potato.png',
   'carbroker': '/brand-logos/carbroker.png',
-  'curry-bag': '/brand-logos/curry-bag.png',
+  'curry-bag': '/curry-bag.png',
   'no-two': '/brand-logos/no-two.png',
   'hyzo': '/brand-logos/hyzo.jpeg',
   'ezka': '/brand-logos/ezka.png',
@@ -51,9 +54,9 @@ const LOGO_ASSETS = {
   'hand-revolution': '/brand-logos/hand-revolution.jpeg',
 }
 
-const ZOOMED_LOGOS = new Set(['nkreatives', 'curry-bag', 'ai-institute', 'tempest-automotive', 'vinayaka-hospital', 'wayanad-trade-centre'])
-const LOGO_BACKGROUNDS = { 'curry-bag': '#050505', 'tempest-automotive': '#d41450' }
-const LOGO_SIZES = { 'curry-bag': 'size-[180%]' }
+const ZOOMED_LOGOS = new Set(['nkreatives', 'ai-institute', 'tempest-automotive', 'vinayaka-hospital', 'wayanad-trade-centre'])
+const CROPPED_LOGOS = new Set(['curry-bag'])
+const LOGO_BACKGROUNDS = { 'curry-bag': '#153B2B', 'tempest-automotive': '#d41450' }
 
 // Social media examples shown inside each selected work's case detail.
 const WORK_GALLERIES = {
@@ -157,7 +160,7 @@ const WORK_GALLERIES = {
     ['carbroker-logo.png', 'CarBroker logo in social media', '/brand-logos/carbroker.png', 'social'],
   ],
   'curry-bag': [
-    ['curry-bag-logo.png', 'Curry Bag logo in social media', '/brand-logos/curry-bag.png', 'social'],
+    ['curry-bag-logo.png', 'Curry Bag logo', '/curry-bag.png', 'social'],
   ],
   'de-coff': [
     ['de-coff-logo.png', 'DE COFF logo in social media', '/brand-logos/de-coff.png', 'social'],
@@ -303,7 +306,7 @@ function Logo({ slug, name, className = '', cover = false, style }) {
           fetchPriority="low"
           draggable={false}
           style={ZOOMED_LOGOS.has(slug) ? { backgroundColor: 'transparent' } : undefined}
-          className={`absolute ${ZOOMED_LOGOS.has(slug) ? `inset-0 m-auto ${LOGO_SIZES[slug] || 'size-[82%]'} object-contain` : 'inset-0 size-full bg-white'} ${cover ? 'object-cover' : 'object-contain'}`}
+          className={`absolute ${CROPPED_LOGOS.has(slug) ? 'inset-0 size-full scale-[1.35] object-cover' : `${ZOOMED_LOGOS.has(slug) ? 'inset-0 m-auto size-[82%] object-contain' : 'inset-0 size-full bg-white'} ${cover ? 'object-cover' : 'object-contain'}`}`}
         />
       </span>
     )
@@ -370,10 +373,11 @@ function SocialAssetGrid({ items }) {
           >
             {sectionItems.map(([file, label, src, placement]) => {
               const isVentureLogo = placement === 'social'
+              const isCurryBagLogo = file === 'curry-bag-logo.png'
               return (
               <figure key={file} className={`m-0 min-w-0 overflow-hidden rounded-lg border-2 border-[#141414] bg-white shadow-[2px_2px_0_#141414] ${['dayone-crm.png', 'dayone-monthly-performance.png'].includes(file) ? 'col-span-2 max-[500px]:col-span-1' : ''}`}>
                 <div className={`grid ${['dayone-crm.png', 'dayone-monthly-performance.png'].includes(file) ? 'aspect-video' : isVentureLogo || (hasBareLogicLogo && file === 'barelogic.png') ? 'aspect-square' : 'aspect-[4/5]'} place-items-center overflow-hidden ${isVentureLogo ? '' : 'bg-[#f3f0eb]'}`}>
-                  <img src={src || `/social-media/${file}`} alt={label} loading="lazy" decoding="async" className={`block h-full w-full ${isVentureLogo ? 'object-cover' : 'object-contain'} ${hasBareLogicLogo && file === 'barelogic.png' ? 'scale-[1.65]' : ''}`} />
+                  <img src={src || `/social-media/${file}`} alt={label} loading="lazy" decoding="async" className={`block h-full w-full ${isVentureLogo ? 'object-cover' : 'object-contain'} ${isCurryBagLogo ? 'scale-[1.35]' : hasBareLogicLogo && file === 'barelogic.png' ? 'scale-[1.65]' : ''}`} />
                 </div>
                 {!/instagram|social post|social posts/i.test(label) && (
                   <figcaption className="border-t-2 border-[#141414] px-2 py-1.5 text-[0.7rem] font-bold leading-tight">{label}</figcaption>
@@ -437,6 +441,51 @@ const FEATURED = [
     note: 'A recurring illustrated practical-guide format creates a distinct content experience around startup learning.',
   },
   {
+    slug: 'curry-bag', name: 'Curry Bag', sector: 'Food & takeaway', role: 'Founder / Co-founder',
+    filter: 'founder', accent: '#ffcfae',
+    headline: 'Building a food venture from the ground up',
+    summary: 'Founder-led work across business setup, brand development, go-to-market planning and preparation for launch.',
+    lead: ['Business leadership', 'Marketing leadership', 'Brand strategy', 'Naming & identity', 'Brand voice', 'Creative direction'],
+    mkt: ['Go-to-market', 'Content production', 'Social design'],
+    note: 'Venture setup and founder support across the brand and launch foundations.',
+  },
+  {
+    slug: 'suite-spot', name: 'Suite Spot', sector: 'HR services / UK', role: 'Business development',
+    filter: 'business-support', accent: '#c9b8ff',
+    headline: 'Building business development systems',
+    summary: 'Support across business development, revenue strategy, marketing and client relationship systems.',
+    lead: ['Business development', 'Client relationship systems'],
+    mkt: ['Revenue strategy', 'Marketing'],
+    note: 'People-services business support across growth and client operations.',
+  },
+  {
+    slug: 'beyond-the-business', name: 'Beyond the Business', sector: 'Management consultancy / digital marketing', role: 'Business support',
+    filter: 'business-support', accent: '#80dcea',
+    headline: 'Management guidance and digital marketing',
+    summary: 'Management consultancy support for businesses, alongside digital marketing.',
+    lead: ['Management consultancy'],
+    mkt: ['Digital marketing'],
+    note: 'Business guidance and digital marketing support.',
+  },
+  {
+    slug: 'admos', name: 'Admos', sector: 'Consumer electronics / GCC', role: 'Business support',
+    filter: 'business-support', accent: '#ffe14d',
+    headline: 'Structuring an accessories business',
+    summary: 'Support across management structures, product planning, standard operating procedures and operational systems.',
+    lead: ['Management', 'Operations', 'SOPs'],
+    mkt: ['Product planning'],
+    note: 'Operational and product support for a consumer accessories business.',
+  },
+  {
+    slug: 'xyklon', name: 'Xyklon', sector: 'Mobile accessories / GCC', role: 'Business support',
+    filter: 'business-support', accent: '#7ee2a8',
+    headline: 'Organising product and operations',
+    summary: 'Support across product structure, management strategy, business processes and operational systems.',
+    lead: ['Management strategy', 'Business processes', 'Operations'],
+    mkt: ['Product structure'],
+    note: 'Business and operations support for a mobile accessories venture.',
+  },
+  {
     slug: 'nkreatives', name: 'NKreatives', sector: 'Creative / marketing agency', role: 'Creative Director',
     filter: 'creative', accent: '#c6f24e',
     headline: 'Creative direction with commercial context',
@@ -490,6 +539,7 @@ const WORK_FILTERS = [
   ['marketing', 'Marketing lead'],
   ['creative', 'Creative director'],
   ['advisor', 'Consultant / Advisor'],
+  ['business-support', 'Business support'],
   ['event-head', 'Event head'],
 ]
 
@@ -502,6 +552,9 @@ const matchesWorkFilter = (item, filter) => {
 
 const BRANDS = [
   ['admos', 'Admos', 'Consumer electronics / GCC'],
+  ['suite-spot', 'Suite Spot', 'HR services / UK'],
+  ['beyond-the-business', 'Beyond the Business', 'Management consultancy / digital marketing'],
+  ['xyklon', 'Xyklon', 'Mobile accessories / GCC'],
   ['oxtel', 'Oxtel', 'Hospitality'],
   ['start-x', 'Start-X', 'Startup ecosystem'], ['hey-dossa', 'Hey Dossa', 'Food & beverage'],
   ['moon-bliss', 'MoonBliss', "Women's wellness"], ['zaati', 'Zaati', 'Restaurant'],
@@ -571,6 +624,14 @@ const PROJECTS = [
   P('Curry Bag', 'Food & takeaway', 'food', 'Founder / Co-founder', 'founder',
     ['CEO / business leadership', 'Marketing leadership'],
     ['Brand strategy', 'Naming & identity', 'Brand voice', 'Brand architecture', 'Creative direction', 'Content production', 'Social design'], ['Go-to-market']),
+  P('Suite Spot', 'HR services / UK', 'corporate', 'Consultant / Advisor', 'advisor',
+    ['Business development', 'Client relationship systems'], [], ['Revenue strategy', 'Marketing']),
+  P('Beyond the Business', 'Management consultancy / digital marketing', 'corporate', 'Consultant / Advisor', 'advisor',
+    ['Management consultancy'], [], ['Digital marketing']),
+  P('Admos', 'Consumer electronics / GCC', 'consumer', 'Consultant / Advisor', 'advisor',
+    ['Management', 'Operations', 'SOPs'], [], ['Product planning']),
+  P('Xyklon', 'Mobile accessories / GCC', 'consumer', 'Consultant / Advisor', 'advisor',
+    ['Management strategy', 'Business processes', 'Operations'], [], ['Product structure']),
   P('The Founderverse', 'Startup education', 'venture', 'Founder / Co-founder', 'founder', L_ALL, B_ALL, M_ALL),
   P('Hyzo', 'Brand concept', 'consumer', 'Consultant / Advisor', 'advisor',
     [], ['Naming & identity', 'Brand architecture', 'Creative direction', 'Content production', 'Social design'], []),
@@ -817,7 +878,7 @@ export default function CreativePortfolio() {
 
   const [active, setActive] = useState('dashboard')
   const [headerVisible, setHeaderVisible] = useState(true)
-  const [workFilter, setWorkFilter] = useState('ceo')
+  const [workFilter, setWorkFilter] = useState('all')
   const [current, setCurrent] = useState(0)
   const [caseOpen, setCaseOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -833,6 +894,11 @@ export default function CreativePortfolio() {
     setQuery('')
     setOpenRows(new Set([index]))
     requestAnimationFrame(() => document.getElementById(`project-${slug}`)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }))
+  }, [hash])
+
+  useEffect(() => {
+    if (hash !== '#work') return
+    requestAnimationFrame(() => document.getElementById('work')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }))
   }, [hash])
 
   /* ---------- Document title ---------- */

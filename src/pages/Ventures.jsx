@@ -38,16 +38,6 @@ const pill = 'rounded-full border px-3 py-1 text-xs font-medium'
 const move = 'transition-[opacity,transform,translate,scale]'
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-const PORTFOLIO_PROJECT_SLUGS = {
-  ezkaa: 'ezka',
-  'ai-designers': 'ai-designers-ecosystem',
-  founderverse: 'the-founderverse',
-  hosther: 'hosther-hostels',
-  heydossa: 'hey-dossa',
-  'car-broker': 'carbroker',
-  'nk-reactives': 'nkreatives',
-}
-
 function CreativePortfolioPopup({ venture, onClose }) {
   if (!venture) return null
 
@@ -57,7 +47,7 @@ function CreativePortfolioPopup({ venture, onClose }) {
         <p className="m-0 min-w-0 text-sm leading-relaxed text-white/80">See the creative portfolio for <span className="font-semibold text-white">{venture.name}</span>.</p>
         <button type="button" onClick={onClose} aria-label="Close creative portfolio shortcut" className="-mr-1 -mt-1 grid size-8 shrink-0 place-items-center rounded-full text-lg text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4D638]">×</button>
       </div>
-      <Link to={`/creative-portfolio#project-${PORTFOLIO_PROJECT_SLUGS[venture.id] || venture.id}`} onClick={onClose} className="group mt-3 inline-flex min-h-11 w-full items-center justify-between rounded-lg bg-[#C4D638] px-4 text-sm font-bold text-[#10251b] no-underline transition-colors hover:bg-[#d4e66a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+      <Link to="/creative-portfolio#work" onClick={onClose} className="group mt-3 inline-flex min-h-11 w-full items-center justify-between rounded-lg bg-[#C4D638] px-4 text-sm font-bold text-[#10251b] no-underline transition-colors hover:bg-[#d4e66a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
         See my creative portfolio<ArrowRight size={18} weight="light" aria-hidden className="transition-transform duration-300 group-hover:translate-x-1" />
       </Link>
     </aside>,
