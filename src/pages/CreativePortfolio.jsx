@@ -1484,7 +1484,7 @@ export default function CreativePortfolio() {
               <p className="text-[#141414]/75">Business &amp; Marketing Leadership · Creative Direction · Venture Building</p>
               <p className="max-w-[54ch] text-[#141414]/75">Have a project in mind? Call me directly or send a note through the contact form.</p>
               <div className="flex flex-wrap gap-3 mt-2 relative z-[1]">
-                <a className={`${BTN_CORE} ${BTN_DARK} ${BTN_PAD} bg-[#ff5a52] text-[#141414]`} href="tel:+917789800898">Call +91 77 898 00 898 <span aria-hidden="true">↗</span></a>
+                {/* <a className={`${BTN_CORE} ${BTN_DARK} ${BTN_PAD} bg-[#ff5a52] text-[#141414]`} href="tel:+917789800898">Call +91 77 898 00 898 <span aria-hidden="true">↗</span></a> */}
                 <Link className={`${BTN_CORE} ${BTN_DARK} ${BTN_PAD} bg-[#ffe14d] text-[#141414]`} to="/contact">Email / contact form <span aria-hidden="true">↗</span></Link>
                 <a className={`${BTN_CORE} ${BTN_DARK} ${BTN_PAD} bg-[#ffe14d] text-[#141414]`} href="#top">Back to top <span aria-hidden="true">↑</span></a>
               </div>

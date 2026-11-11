@@ -113,7 +113,7 @@ export default function Opportunities() {
           <p className="mt-5 max-w-md text-sm leading-6 text-[#c2cdc0]">Share a little about yourself and we’ll take it from there.</p>
           <div className="mt-9 grid gap-3 border-t border-white/15 pt-6 text-sm">
             <a href={`mailto:connect@hashirusman.online?subject=${encodeURIComponent(`Opportunity: ${role}`)}`} className="inline-flex items-center gap-3 text-[#d3e66b] no-underline hover:text-white"><EnvelopeSimple size={19} aria-hidden /> Email the team instead <ArrowUpRight size={15} aria-hidden /></a>
-            <a href="tel:+917789800898" className="inline-flex items-center gap-3 text-[#c2cdc0] no-underline hover:text-white"><Phone size={18} aria-hidden /> +91 77 898 00 898</a>
+            {/* <a href="tel:+917789800898" className="inline-flex items-center gap-3 text-[#c2cdc0] no-underline hover:text-white"><Phone size={18} aria-hidden /> +91 77 898 00 898</a> */}
           </div>
         </div>
 
