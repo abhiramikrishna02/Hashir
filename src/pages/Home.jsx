@@ -595,8 +595,6 @@ export default function Home() {
       // Keep the popup dismissed for this page session if storage is unavailable.
     }
   }
-  const line = (d) => ({ strokeDashoffset: ready ? 0 : 1, transition: `stroke-dashoffset 850ms ${EASE} ${d}ms` })
-
   return (
     <>
     <main id="main" className="overflow-x-clip font-sans text-[#171a17]">
@@ -622,13 +620,27 @@ export default function Home() {
             </div>
             <div className="order-2 lg:order-none lg:col-span-5">
               <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] lg:ml-auto lg:max-h-[min(72svh,820px)] lg:max-w-none" style={{ clipPath: ready ? 'inset(0 0 0 0)' : 'inset(100% 0 0 0)', transition: `clip-path 650ms ${EASE} 80ms` }}>
-                <div className={`absolute inset-0 left-[10%] top-[8%] rounded-tl-[20px] bg-[#adca2d] ${dotted}`} aria-hidden />
-                <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full" fill="none" stroke="#171a1b" aria-hidden>
-                  <g strokeOpacity=".22">{[100, 200, 300].map((x) => <path key={x} d={`M${x} 0V500`} />)}{[120, 230, 340, 450].map((y) => <path key={y} d={`M0 ${y}H400`} />)}</g>
-                  <path d="M0 450H100V340H200V230H300V120H400" pathLength="1" strokeDasharray="1" strokeWidth="2" style={line(80)} />
-                  {[[100, 340], [200, 230], [300, 120]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r="7" fill="#f8f9f6" strokeWidth="1.5" style={{ opacity: ready ? 1 : 0, transition: `opacity 350ms ease ${120 + i * 80}ms` }} />)}
-                  <path d="M12 36V12H36M364 12H388V36" strokeOpacity=".7" />
-                </svg>
+                <div className={`absolute inset-0 left-[10%] top-[8%] overflow-hidden rounded-tl-[20px] bg-[#adca2d] ${dotted}`} aria-hidden>
+                  <svg viewBox="0 0 360 460" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" fill="none" aria-hidden>
+                    <defs>
+                      <linearGradient id="hero-column-fill" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stopColor="#f3f8d7" stopOpacity=".4" /><stop offset="1" stopColor="#f3f8d7" stopOpacity=".16" /></linearGradient>
+                    </defs>
+                    <g stroke="#171a1b" strokeOpacity=".2" strokeWidth="1">
+                      {[80, 160, 240, 320].map((x, i) => <path key={`col-${x}`} d={`M${x} 18V440`} pathLength="1" strokeDasharray="1" style={{ strokeDashoffset: ready ? 0 : 1, transition: `stroke-dashoffset 620ms ${EASE} ${i * 90}ms` }} />)}
+                      {[80, 180, 280, 380].map((y, i) => <path key={`row-${y}`} d={`M18 ${y}H342`} pathLength="1" strokeDasharray="1" style={{ strokeDashoffset: ready ? 0 : 1, transition: `stroke-dashoffset 620ms ${EASE} ${180 + i * 90}ms` }} />)}
+                    </g>
+                    <path d="M18 440H342" stroke="#171a1b" strokeOpacity=".38" strokeWidth="1.5" pathLength="1" strokeDasharray="1" style={{ strokeDashoffset: ready ? 0 : 1, transition: `stroke-dashoffset 620ms ${EASE} 540ms` }} />
+                    {[
+                      { x: 32, height: 78 },
+                      { x: 108, height: 132 },
+                      { x: 184, height: 194 },
+                      { x: 260, height: 258 },
+                    ].map(({ x, height }, i) => (
+                      <rect key={x} x={x} y={440 - height} width="34" height={height} rx="3" fill="url(#hero-column-fill)"
+                        style={{ transform: `scaleY(${ready ? 1 : 0})`, transformOrigin: 'bottom', transition: `transform 800ms ${EASE} ${560 + i * 150}ms` }} />
+                    ))}
+                  </svg>
+                </div>
                 <img className="absolute inset-0 h-full w-full max-w-none object-cover object-top" src="/images/hashir-portrait.webp" srcSet="/images/hashir-portrait-small.webp 480w, /images/hashir-portrait-medium.webp 800w, /images/hashir-portrait.webp 1120w" sizes="(max-width:1023px) 94vw, 40vw" width="1120" height="1400" alt="Portrait of Hashir Usman" fetchPriority="high" />
               </div>
               <nav aria-label="Social media profiles" className="relative z-20 mx-auto mt-4 flex w-fit max-w-full items-center gap-2.5 sm:gap-4 lg:ml-auto lg:mr-0">
