@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-9 lg:grid-cols-12 lg:items-start lg:gap-x-8">
           <section className="col-span-2 lg:col-span-4 lg:pr-10" aria-labelledby="footer-about-title">
             <h2 id="footer-about-title" className="sr-only">Hashir Usman</h2>
-            <img src="/curry-bag.png" alt="Hashir Usman" className="h-16 w-16 object-contain" />
+            <img src="/favicon.svg" alt="Hashir Usman" className="h-16 w-16 object-contain" />
             <p className="mt-4 mb-0 max-w-md text-xs font-semibold uppercase tracking-[.18em] text-[#a4be2d]">Startup Architect. Venture Builder. Business Consultant.</p>
             <p className="mt-3 max-w-sm text-sm leading-7 text-[#b8c4b4] sm:text-[15px]">Building startups, strengthening businesses, and figuring things out along the way.</p>
             <Link to="/contact?about=strategy-call" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#a4be2d] no-underline transition-colors hover:text-[#c5d96a]">Book a Strategy Call <ArrowUpRight size={17} aria-hidden /></Link>
