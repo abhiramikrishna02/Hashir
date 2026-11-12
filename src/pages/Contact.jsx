@@ -105,7 +105,7 @@ export default function Contact() {
         <path d="M100 560V220A100 100 0 0 1 300 220V560" strokeOpacity=".22" />
       </svg>
 
-      <section className="ct-grain relative isolate mt-6 overflow-hidden rounded-[36px] bg-[radial-gradient(120%_120%_at_0%_0%,#26301f_0%,#181d17_52%,#101312_100%)] px-6 pb-24 pt-12 text-[#f8f9f6] shadow-[0_50px_100px_-55px_#0b0f0a] sm:mt-8 sm:px-10 sm:pb-28 sm:pt-16 lg:px-14 lg:pb-32 lg:pt-24 xl:px-20" aria-labelledby="contact-title">
+      <section className="ct-grain relative isolate mt-6 overflow-hidden rounded-[36px] bg-[radial-gradient(120%_120%_at_0%_0%,#26301f_0%,#181d17_52%,#101312_100%)] px-6 pb-20 pt-10 text-[#f8f9f6] shadow-[0_50px_100px_-55px_#0b0f0a] sm:mt-8 sm:px-10 sm:pb-24 sm:pt-14 lg:px-14 lg:pb-28 lg:pt-20 xl:px-20" aria-labelledby="contact-title">
         {/* warm glows */}
         <div className="pointer-events-none absolute -bottom-44 -left-28 -z-10 size-[480px] rounded-full bg-[#a4be2d]/20 blur-[130px]" aria-hidden />
 
@@ -120,14 +120,9 @@ export default function Contact() {
           ))}
         </svg>
 
-        <div data-reveal className={`${reveal} relative max-w-3xl`}>
-          <span className="mb-8 inline-flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[.32em] text-[#a4be2d] before:h-px before:w-10 before:bg-gradient-to-r before:from-transparent before:to-[#a4be2d]">Say hello</span>
-          <h1 id="contact-title" className="ct-serif text-[clamp(48px,7vw,96px)] font-medium leading-[.98] tracking-[-.035em]">Got something<br /><span className="relative inline-block bg-gradient-to-r from-[#a4be2d] via-[#c5d96a] to-[#e6f29a] bg-clip-text pb-2 pr-2 italic text-transparent">on your mind?
-            <svg viewBox="0 0 300 12" preserveAspectRatio="none" className="absolute -bottom-1 left-0 h-3 w-full" fill="none" stroke="#a4be2d" strokeWidth="1.5" strokeLinecap="round" aria-hidden>
-              <path className="ct-draw" pathLength="1" vectorEffect="non-scaling-stroke" d="M2 9 C 80 2, 190 2, 298 8" />
-            </svg>
-          </span></h1>
-          <p className="ct-serif mt-9 max-w-[600px] text-lg font-normal italic leading-[1.7] text-[#c9d1c4] sm:text-xl">An idea. A business problem. An interesting collaboration.</p>
+        <div data-reveal className={`${reveal} relative max-w-4xl`}>
+          <h1 id="contact-title" className="ct-serif text-[clamp(42px,7.2vw,96px)] font-medium leading-[1.08] tracking-[-.035em]">Got something<br /><span className="bg-gradient-to-r from-[#a4be2d] via-[#c5d96a] to-[#e6f29a] bg-clip-text italic tracking-[-.01em] text-transparent">on your mind<span className="ml-[0.2em] inline-block not-italic tracking-normal">?</span></span></h1>
+          <p className="ct-serif mt-7 max-w-[600px] text-base font-normal leading-[1.7] text-[#c9d1c4] sm:mt-8 sm:text-lg">An idea, a business problem, or an interesting collaboration.</p>
         </div>
         <div className="relative mt-12 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-white/15 pt-5 text-sm text-[#b8c4b4] sm:mt-16 sm:pt-6">
           <span className="grid size-9 place-items-center rounded-full border border-[#a4be2d]/40"><MapPin size={16} weight="light" className="text-[#a4be2d]" aria-hidden /></span>
@@ -144,12 +139,11 @@ export default function Contact() {
             <path d="M80 240V120A40 40 0 0 1 160 120V240" strokeOpacity=".35" />
           </svg>
           <div className="pointer-events-none absolute -bottom-28 -left-24 -z-10 size-72 rounded-full bg-[#a4be2d]/10 blur-[80px]" aria-hidden />
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-5 sm:mb-10">
             <div>
-              <p className="mb-3 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[.28em] text-[#7c9318] before:h-px before:w-8 before:bg-[#a4be2d]">I’m listening</p>
               <h2 id="form-heading" className="ct-serif text-3xl font-medium tracking-[-.025em] text-[#171a17] sm:text-4xl">Tell me a little about it</h2>
             </div>
-            <p className="ct-serif max-w-xs border-l border-[#a4be2d] pl-4 text-[15px] italic leading-6 text-[#72766f]">Or maybe you just want to ask something.</p>
+            <p className="max-w-xs text-sm leading-6 text-[#72766f]">Questions and introductions are welcome.</p>
           </div>
           <form onSubmit={handleSubmit} className="grid gap-6">
             <label className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true" tabIndex={-1}>Website<input name="website" autoComplete="off" tabIndex={-1} /></label>
@@ -192,7 +186,6 @@ export default function Contact() {
             <path d="M50 300V150A100 100 0 0 1 250 150V300" strokeOpacity=".4" />
             <path d="M90 300V150A60 60 0 0 1 210 150V300" strokeOpacity=".3" />
           </svg>
-          <p className="mb-3 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[.28em] text-[#a4be2d] before:h-px before:w-8 before:bg-[#a4be2d]">Or just say hello</p>
           <h2 className="ct-serif text-3xl font-medium tracking-[-.025em] sm:text-4xl">Connect directly</h2>
           <p className="ct-serif mt-3 text-[15px] italic leading-6 text-[#b8c4b4]">Good things usually start with a conversation.</p>
           <div className="my-8 h-px bg-gradient-to-r from-[#a4be2d]/70 via-[#465243] to-transparent" />
