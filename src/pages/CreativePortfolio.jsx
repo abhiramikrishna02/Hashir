@@ -548,6 +548,8 @@ const matchesWorkFilter = (item, filter) => {
   return item.filter === filter
 }
 
+const HIDDEN_SELECTED_WORK = new Set(['beyond-the-business', 'xyklon', 'suite-spot'])
+
 /* ---------- Data: brand universe (logo wall) ---------- */
 
 const BRANDS = [
@@ -1001,7 +1003,7 @@ export default function CreativePortfolio() {
 
   /* ---------- Case dialog ---------- */
   const visibleWorkCards = useMemo(
-    () => ALL_WORK.map((f, i) => ({ f, i })).filter(({ f }) => matchesWorkFilter(f, workFilter)),
+    () => ALL_WORK.map((f, i) => ({ f, i })).filter(({ f }) => !HIDDEN_SELECTED_WORK.has(f.slug) && matchesWorkFilter(f, workFilter)),
     [workFilter],
   )
   const visibleCases = visibleWorkCards.map(({ i }) => i)
