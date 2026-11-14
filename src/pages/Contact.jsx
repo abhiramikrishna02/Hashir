@@ -91,7 +91,7 @@ export default function Contact() {
   const arrowClass = 'ml-auto shrink-0 text-[#8e9d88] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#a4be2d]'
 
   return (
-    <main id="main" className="relative isolate mx-auto w-full max-w-[1600px] px-5 pb-20 sm:px-8 lg:pb-28 xl:px-10">
+    <main id="main" className="relative isolate mx-auto w-full max-w-[1280px] px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10 lg:pb-24">
       <style>{css}</style>
 
       {/* soft warm backdrop behind the content */}
@@ -105,7 +105,7 @@ export default function Contact() {
         <path d="M100 560V220A100 100 0 0 1 300 220V560" strokeOpacity=".22" />
       </svg>
 
-      <section className="ct-grain relative isolate mt-6 overflow-hidden rounded-[36px] bg-[radial-gradient(120%_120%_at_0%_0%,#26301f_0%,#181d17_52%,#101312_100%)] px-6 pb-20 pt-10 text-[#f8f9f6] shadow-[0_50px_100px_-55px_#0b0f0a] sm:mt-8 sm:px-10 sm:pb-24 sm:pt-14 lg:px-14 lg:pb-28 lg:pt-20 xl:px-20" aria-labelledby="contact-title">
+      <section className="ct-grain relative isolate mt-5 overflow-hidden rounded-[28px] bg-[radial-gradient(120%_120%_at_0%_0%,#26301f_0%,#181d17_52%,#101312_100%)] px-6 pb-8 pt-9 text-[#f8f9f6] shadow-[0_30px_70px_-45px_#0b0f0a] sm:mt-7 sm:rounded-[32px] sm:px-10 sm:pb-10 sm:pt-12 lg:px-14 lg:pb-11 lg:pt-14" aria-labelledby="contact-title">
         {/* warm glows */}
         <div className="pointer-events-none absolute -bottom-44 -left-28 -z-10 size-[480px] rounded-full bg-[#a4be2d]/20 blur-[130px]" aria-hidden />
 
@@ -121,17 +121,18 @@ export default function Contact() {
         </svg>
 
         <div data-reveal className={`${reveal} relative max-w-4xl`}>
-          <h1 id="contact-title" className="ct-serif text-[clamp(42px,7.2vw,96px)] font-medium leading-[1.08] tracking-[-.035em]">Got something<br /><span className="bg-gradient-to-r from-[#a4be2d] via-[#c5d96a] to-[#e6f29a] bg-clip-text italic tracking-[-.01em] text-transparent">on your mind<span className="ml-[0.2em] inline-block not-italic tracking-normal">?</span></span></h1>
-          <p className="ct-serif mt-7 max-w-[600px] text-base font-normal leading-[1.7] text-[#c9d1c4] sm:mt-8 sm:text-lg">An idea, a business problem, or an interesting collaboration.</p>
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[.2em] text-[#c5d96a]">Let’s start a conversation</p>
+          <h1 id="contact-title" className="ct-serif text-[clamp(40px,7vw,78px)] font-medium leading-[1.04] tracking-[-.035em]">Got something<br className="hidden sm:block" /> <span className="bg-gradient-to-r from-[#a4be2d] via-[#c5d96a] to-[#e6f29a] bg-clip-text italic tracking-[-.01em] text-transparent">on your mind<span className="ml-[0.2em] inline-block not-italic tracking-normal">?</span></span></h1>
+          <p className="ct-serif mt-4 max-w-[600px] text-base font-normal leading-[1.65] text-[#c9d1c4] sm:mt-5 sm:text-lg">An idea, a business problem, or an interesting collaboration.</p>
         </div>
-        <div className="relative mt-12 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-white/15 pt-5 text-sm text-[#b8c4b4] sm:mt-16 sm:pt-6">
+        <div className="relative mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-white/15 pt-4 text-sm text-[#b8c4b4] sm:mt-8 sm:pt-5">
           <span className="grid size-9 place-items-center rounded-full border border-[#a4be2d]/40"><MapPin size={16} weight="light" className="text-[#a4be2d]" aria-hidden /></span>
           <span>Bengaluru, India</span><span className="text-[#a4be2d]/60" aria-hidden>·</span><span className="ct-serif italic">Big ideas. Simple words. Good energy.</span>
         </div>
       </section>
 
-      <div className="relative z-10 mx-2 -mt-12 grid items-stretch gap-5 sm:mx-6 lg:mx-10 lg:-mt-20 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,.7fr)] lg:gap-7">
-        <section data-reveal style={{ transitionDelay: '100ms' }} className={`${reveal} relative isolate overflow-hidden rounded-[32px] border border-[#e4e8da] bg-white p-6 shadow-[0_50px_100px_-50px_#18220d7a] sm:p-10 lg:p-12`} aria-labelledby="form-heading">
+      <div className="relative z-10 mt-5 grid items-start gap-5 sm:mt-6 sm:gap-6 lg:grid-cols-[minmax(0,1.55fr)_minmax(280px,.75fr)] lg:gap-6">
+        <section data-reveal style={{ transitionDelay: '100ms' }} className={`${reveal} relative isolate overflow-hidden rounded-[26px] border border-[#e4e8da] bg-white p-5 shadow-[0_24px_60px_-42px_#18220d7a] sm:rounded-[30px] sm:p-8 lg:p-10`} aria-labelledby="form-heading">
           <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#7c9318] via-[#a4be2d] to-[#e6f29a]" aria-hidden />
           <svg viewBox="0 0 240 240" className="pointer-events-none absolute -right-16 -top-16 -z-10 w-60 opacity-80" fill="none" stroke="#c5d38c" strokeWidth="1" aria-hidden>
             <path d="M20 240V120A100 100 0 0 1 220 120V240" strokeOpacity=".7" />
@@ -139,15 +140,15 @@ export default function Contact() {
             <path d="M80 240V120A40 40 0 0 1 160 120V240" strokeOpacity=".35" />
           </svg>
           <div className="pointer-events-none absolute -bottom-28 -left-24 -z-10 size-72 rounded-full bg-[#a4be2d]/10 blur-[80px]" aria-hidden />
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-5 sm:mb-10">
+          <div className="mb-7 flex flex-col gap-2 sm:mb-8">
             <div>
-              <h2 id="form-heading" className="ct-serif text-3xl font-medium tracking-[-.025em] text-[#171a17] sm:text-4xl">Tell me a little about it</h2>
+              <h2 id="form-heading" className="ct-serif text-[clamp(27px,4vw,38px)] font-medium leading-tight tracking-[-.025em] text-[#171a17]">Tell me a little about it</h2>
             </div>
-            <p className="max-w-xs text-sm leading-6 text-[#72766f]">Questions and introductions are welcome.</p>
+            <p className="text-sm leading-6 text-[#72766f]">Questions and introductions are welcome.</p>
           </div>
           <form onSubmit={handleSubmit} className="grid gap-6">
             <label className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true" tabIndex={-1}>Website<input name="website" autoComplete="off" tabIndex={-1} /></label>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2 md:gap-6">
               <label className={labelClass}><span>What should I call you?{star}</span>
                 <span className="relative block"><input className={`${fieldClass} pl-12`} autoComplete="name" name="name" required maxLength={100} /><UserCircle size={20} weight="light" className={fieldIconClass} aria-hidden /></span>
               </label>
@@ -155,7 +156,7 @@ export default function Contact() {
                 <span className="relative block"><input className={`${fieldClass} pl-12`} autoComplete="email" type="email" name="email" placeholder="you@company.com" required maxLength={254} /><EnvelopeSimple size={20} weight="light" className={fieldIconClass} aria-hidden /></span>
               </label>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2 md:gap-6">
               <label className={labelClass}>Phone
                 <span className="relative block"><input className={`${fieldClass} pl-12`} autoComplete="tel" type="tel" name="phone" maxLength={30} /><Phone size={20} weight="light" className={fieldIconClass} aria-hidden /></span>
               </label>
@@ -179,7 +180,7 @@ export default function Contact() {
           </form>
         </section>
 
-        <aside data-reveal style={{ transitionDelay: '220ms' }} className={`${reveal} relative isolate flex flex-col overflow-hidden rounded-[32px] bg-[linear-gradient(160deg,#2c3d2a_0%,#1c271d_55%,#131a14_100%)] p-6 text-[#e3e8df] shadow-[0_50px_100px_-50px_#0b140a] sm:p-10 lg:p-11`} aria-label="Contact links">
+        <aside data-reveal style={{ transitionDelay: '220ms' }} className={`${reveal} relative isolate flex flex-col overflow-hidden rounded-[26px] bg-[linear-gradient(160deg,#2c3d2a_0%,#1c271d_55%,#131a14_100%)] p-6 text-[#e3e8df] shadow-[0_24px_60px_-42px_#0b140a] sm:rounded-[30px] sm:p-8 lg:sticky lg:top-24 lg:p-9`} aria-label="Contact links">
           <div className="pointer-events-none absolute -right-20 -top-20 -z-10 size-72 rounded-full bg-[#a4be2d]/25 blur-[90px]" aria-hidden />
           <svg viewBox="0 0 300 300" className="pointer-events-none absolute -bottom-6 -right-12 -z-10 w-[300px] opacity-50" fill="none" stroke="#a4be2d" strokeWidth="1" aria-hidden>
             <path d="M10 300V150A140 140 0 0 1 290 150V300" strokeOpacity=".55" />

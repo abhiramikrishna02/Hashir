@@ -601,25 +601,23 @@ export default function Home() {
       {/* 1. Hero */}
       <section id="home" aria-labelledby="hero-title" className="relative flex min-h-[calc(100svh-72px)] flex-col max-[768px]:min-h-[calc(100svh-64px)]">
         <div className="mx-auto flex w-full max-w-[1720px] flex-1 flex-col px-5 pb-6 pt-4 sm:px-8 sm:pb-12 sm:pt-8 lg:px-12 lg:pt-12 xl:px-16 2xl:px-20">
-          <div className="grid flex-1 items-center gap-x-8 gap-y-4 lg:grid-cols-12 lg:gap-12 xl:gap-16">
-            <div className="contents lg:col-span-7 lg:block">
-              <div className="mb-5 flex flex-col items-stretch sm:mb-7 sm:flex-row sm:flex-wrap sm:items-center" style={rise(ready, 60)}>
-                <Link to="/contact" className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-lg border-2 border-[#a4be2d] bg-[#a4be2d] px-5 py-3 text-center text-sm font-bold leading-tight text-[#1e2618] shadow-[0_8px_24px_#52651a35] transition-[transform,background-color,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#b3cc35] hover:bg-[#b3cc35] hover:shadow-[0_12px_28px_#52651a45] active:scale-[.98] sm:w-auto sm:px-7 sm:text-base">Book a free 10-minute strategy call <Arrow /></Link>
-              </div>
+          <div className="grid flex-1 content-start items-start gap-x-8 gap-y-8 lg:grid-cols-12 lg:content-center lg:items-center lg:gap-12 xl:gap-16">
+            <div className="flex min-w-0 flex-col lg:col-span-7">
               <div style={rise(ready, 100)}>
-                <h1 id="hero-title" className="text-[clamp(56px,7.2vw,120px)] font-extrabold leading-[.92] tracking-[-.065em]">Hashir Usman</h1>
+                <h1 id="hero-title" className="text-[clamp(42px,9.5vw,120px)] font-extrabold leading-[.94] tracking-[-.065em]">Hashir Usman</h1>
               </div>
-              <Heading tag="h2" on={ready} delay={140} className="mt-3 text-[clamp(38px,4.3vw,68px)] font-extrabold leading-[1.04] tracking-[-.055em] sm:mt-6" lines={['Is your business growing?', <span className="text-[#7c9318]">Or just getting busier?</span>]} />
-              <div className="order-1 mt-4 max-w-[600px] lg:order-none sm:mt-8" style={rise(ready, 100)}>
-                <h3 className="m-0 text-xl font-bold leading-[1.3] tracking-[-.02em] text-[#65751b] sm:text-[22px]">Startup architect. Venture builder. Business consultant.</h3>
-                <p className="m-0 mt-3 text-base leading-[1.6] text-[#2f332e] sm:text-lg xl:text-xl">I help people start businesses, fix what’s not working, and build systems that make growth a little less chaotic.</p>
+              <Heading tag="h2" on={ready} delay={140} className="mt-3 text-[clamp(30px,7vw,64px)] font-extrabold leading-[1.05] tracking-[-.05em] sm:mt-5 lg:mt-6" lines={['Is your business growing?', <span className="text-[#7c9318]">Or just getting busier?</span>]} />
+              <div className="mt-4 max-w-[600px] sm:mt-6 lg:mt-8" style={rise(ready, 100)}>
+                <h3 className="m-0 text-base font-semibold leading-[1.45] tracking-[-.01em] text-[#65751b] sm:text-lg">Startup architect · Venture builder · Business consultant</h3>
+                <p className="m-0 mt-3 text-[15px] leading-[1.65] text-[#454a42] sm:text-base xl:text-lg">I help people start businesses, fix what’s not working, and build systems that make growth a little less chaotic.</p>
               </div>
-              <div className="order-3 mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:order-none sm:mt-6" style={rise(ready, 220)}>
-                <Link to="/ventures" className="group inline-flex min-h-12 items-center justify-center gap-3 rounded border-[1.5px] border-[#a4aaa0] px-6 text-[13px] font-semibold transition-colors duration-300 hover:border-[#171a1b] hover:bg-[#171a1b] hover:text-white active:scale-[.97]">See My Work <Arrow /></Link>
+              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 sm:mt-6 lg:order-first lg:mb-5 lg:mt-0" style={rise(ready, 220)}>
+                <Link to="/contact" className="group inline-flex min-h-12 w-fit max-w-full items-center justify-center gap-2.5 rounded-full border border-[#8da320] bg-[#a4be2d] px-5 py-2.5 text-center text-[13px] font-bold leading-tight text-[#1e2618] shadow-[0_5px_16px_#52651a20] transition-[transform,background-color,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#b3cc35] hover:bg-[#b3cc35] hover:shadow-[0_8px_20px_#52651a2e] active:scale-[.98] sm:px-6 sm:text-sm">Book a free 10-minute strategy call <Arrow /></Link>
+                <Link to="/ventures" className="group inline-flex min-h-11 items-center gap-2 px-1 text-[13px] font-semibold text-[#50574a] underline decoration-[#b6bea7] underline-offset-4 transition-colors duration-200 hover:text-[#617319] hover:decoration-[#7c9318]">See My Work <Arrow /></Link>
               </div>
             </div>
-            <div className="order-2 lg:order-none lg:col-span-5">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] lg:ml-auto lg:max-h-[min(72svh,820px)] lg:max-w-none" style={{ clipPath: ready ? 'inset(0 0 0 0)' : 'inset(100% 0 0 0)', transition: `clip-path 650ms ${EASE} 80ms` }}>
+            <div className="w-full lg:col-span-5">
+              <div className="relative mx-auto aspect-[4/4.7] w-full max-w-[400px] overflow-hidden rounded-[20px] sm:aspect-[4/5] sm:max-w-[520px] lg:ml-auto lg:max-h-[min(72svh,820px)] lg:max-w-none lg:rounded-none" style={{ clipPath: ready ? 'inset(0 0 0 0)' : 'inset(100% 0 0 0)', transition: `clip-path 650ms ${EASE} 80ms` }}>
                 <div className={`absolute inset-0 left-[10%] top-[8%] overflow-hidden rounded-tl-[20px] bg-[#adca2d] ${dotted}`} aria-hidden>
                   <svg viewBox="0 0 360 460" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" fill="none" aria-hidden>
                     <defs>
